@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>Admin Dashboard</h2>
+
+    <table>
+        <tr>
+            <th>User</th>
+            <th>PNR</th>
+            <th>Complaint</th>
+            <th>Status</th>
+            <th>Update</th>
+        </tr>
+
+        {% for c in complaints %}
+        <tr>
+            <td>{{ c.user.username }}</td>
+            <td>{{ c.pnr }}</td>
+            <td>{{ c.complaint }}</td>
+            <td>{{ c.status }}</td>
+
+            <td>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="id" value="{{ c.id }}">
+                    <select name="status">
+                        <option>Pending</option>
+                        <option>Reviewing</option>
+                        <option>Action Taken</option>
+                        <option>Resolved</option>
+                    </select>
+                    <button class="btn btn-success" type="submit">Update</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

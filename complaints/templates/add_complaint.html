@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+
+    <!-- Back Button -->
+    <a href="/accounts/profile/" class="btn btn-primary" style="margin-bottom:15px; display:inline-block;">
+        ← Back
+    </a>
+
+    <h2>Submit Complaint</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        PNR Number:
+        <input type="text" name="pnr">
+
+        Complaint:
+        <textarea name="complaint"></textarea>
+
+        Urgency:
+        <select name="urgency">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select>
+
+        Cleanliness (1-5):
+        <input type="number" name="cleanliness">
+
+        Working Condition (1-5):
+        <input type="number" name="working">
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+</div>
+{% endblock %}

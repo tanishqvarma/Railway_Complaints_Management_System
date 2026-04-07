@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>Welcome {{ user.username }}</h2>
+
+    <a href="/add/" class="btn btn-primary">Add Complaint</a>
+    <a href="/my/" class="btn btn-success">View Complaints</a>
+</div>
+{% endblock %}

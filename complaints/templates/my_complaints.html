@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+
+    <!-- Back Button -->
+    <a href="/accounts/profile/" class="btn btn-primary" style="margin-bottom:15px; display:inline-block;">
+        ← Back
+    </a>
+
+    <h2>My Complaints</h2>
+
+    <table>
+        <tr>
+            <th>PNR</th>
+            <th>Urgency</th>
+            <th>Status</th>
+        </tr>
+
+        {% for c in data %}
+        <tr>
+            <td>{{ c.pnr }}</td>
+            <td>{{ c.urgency }}</td>
+            <td>{{ c.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}
