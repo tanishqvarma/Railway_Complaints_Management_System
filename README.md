@@ -12,4 +12,4 @@ downloading required modules --> pip install -r requirements.txt
 Read migrating files --> python manage.py makemigrations
 Create migration(DB creation) --> python manage.py migrate
 Superuser(Admin creation) --> python manage.py createsuperuser
-Login to server --> python manage.py runserver (copy the url  http://127.0.0.1:8000/login/)
+Login to server --> python manage.py runserver (copy the url  http://127.0.0.1:8000/login/) 
